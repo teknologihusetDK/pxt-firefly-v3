@@ -1,13 +1,15 @@
+enum DCDirectionValuesDansk {
+    //% block=fremad
+    forward = 0,
+    //% block=baglæns
+    backward = 1
+}
+
 
 namespace Firefly {
     let i2cAddr: 0x08 // 0x08
     
-    enum DCDirectionValuesDansk {
-        //% block=fremad
-        forward = 0,
-        //% block=baglæns
-        backward = 1
-    }
+   
 
     function write(chipAddress: number, component: number, command: number, value: number): void {
         const buffer = pins.createBuffer(3)
