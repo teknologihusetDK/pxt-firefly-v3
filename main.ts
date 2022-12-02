@@ -1,11 +1,3 @@
-enum DCDirectionValuesDansk {
-    //% block=fremad
-    forward = 0,
-    //% block=baglæns
-    backward = 1
-}
-
-
 namespace Firefly {
     let i2cAddr: 0x08 // 0x08
     
@@ -70,7 +62,7 @@ namespace Firefly {
     //% block="Kør %dcAtPin| %direction | med hastighed %speed"
     //% group="DC Motor"
     //% speed.min=0 speed.max=255 speed.defl=0
-    export function setDC(dcAtPin: DCPinValues, direction: DCDirectionValuesDansk, speed: number): void {
+    export function setDC(dcAtPin: DCPinValues, direction: DCDirectionValues, speed: number): void {
         //adjustMotorType("dc")
         write(i2cAddr, dcAtPin, direction+1, speed )
     }
