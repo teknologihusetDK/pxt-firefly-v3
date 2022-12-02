@@ -1,3 +1,10 @@
+/**
+ * Blocks for driving servo and DC motors, using the Firefly connection Board
+ */
+
+//% groups='["DC Motor","Servo Motor"]'
+//% weight=111 color=#1565B2 icon="\uf085" block="Firefly"
+
 namespace Firefly {
     let i2cAddr: 0x08 // 0x08
     
