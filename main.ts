@@ -11,11 +11,17 @@ namespace Firefly {
    
 
     function write(chipAddress: number, component: number, command: number, value: number): void {
-        let buffer = pins.createBuffer(3)
+        /*let buffer = pins.createBuffer(3)
         buffer.setNumber(NumberFormat.Int8LE, 0, component)
         buffer.setNumber(NumberFormat.Int8LE, 1, command)
         buffer.setNumber(NumberFormat.Int8LE, 2, value)
-        pins.i2cWriteBuffer(chipAddress, buffer, false)
+        pins.i2cWriteBuffer(chipAddress, buffer, false)*/
+        pins.i2cWriteNumber(chipAddress, component, NumberFormat.Int8LE,false)
+        pause(20)
+        pins.i2cWriteNumber(chipAddress, command, NumberFormat.Int8LE, false)
+        pause(20)
+        pins.i2cWriteNumber(chipAddress, value, NumberFormat.Int8LE, false)
+        pause(20)
     }
 
     /**
