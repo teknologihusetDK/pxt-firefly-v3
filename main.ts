@@ -20,11 +20,11 @@ namespace Firefly {
         basic.pause(20)
         pins.i2cWriteNumber(chipAddress, value, NumberFormat.Int8LE, false)
         basic.pause(20)*/
-        pins.i2cWriteNumber(chipAddress, 1, NumberFormat.Int8LE, false)
+        pins.i2cWriteNumber(8, component, NumberFormat.Int8LE, false)
         basic.pause(20)
-        pins.i2cWriteNumber(chipAddress, 1, NumberFormat.Int8LE, false)
+        pins.i2cWriteNumber(8, command, NumberFormat.Int8LE, false)
         basic.pause(20)
-        pins.i2cWriteNumber(chipAddress, 20, NumberFormat.Int8LE, false)
+        pins.i2cWriteNumber(8, value, NumberFormat.Int8LE, false)
         basic.pause(20)
     }
 
