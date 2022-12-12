@@ -6,7 +6,7 @@
 //% weight=111 color=#1565B2 icon="\uf085" block="Firefly"
 
 namespace Firefly {
-    let i2cAddr: 0x08 // 0x08
+    let i2cAddr: 8 // 0x08
     
    
 
@@ -16,7 +16,7 @@ namespace Firefly {
         buffer.setNumber(NumberFormat.Int8LE, 1, command)
         buffer.setNumber(NumberFormat.Int8LE, 2, value)
         pins.i2cWriteBuffer(chipAddress, buffer, false)*/
-        pins.i2cWriteNumber(chipAddress, component, NumberFormat.Int8LE,false)
+        pins.i2cWriteNumber(chipAddress, component, NumberFormat.Int8LE, false)
         pause(20)
         pins.i2cWriteNumber(chipAddress, command, NumberFormat.Int8LE, false)
         pause(20)
@@ -37,10 +37,10 @@ namespace Firefly {
     //% block
     //% blockHidden=true
     export enum ServoPinValues {
-        servo1 = 1,
-        servo2 = 2,
-        servo3 = 3,
-        servo4 = 4
+        servo1 = 5,
+        servo2 = 6,
+        servo3 = 7,
+        servo4 = 8
     }
 
     //% blockId=set_servo
@@ -51,7 +51,7 @@ namespace Firefly {
     //max=150 - see servo spec doc
     export function setServo(servoAtPin: ServoPinValues, angle: number): void {
         //adjustMotorType("servo")
-        write(i2cAddr, servoAtPin+4, 5, angle)
+        write(i2cAddr, servoAtPin, 5, angle)
     }
 
     //% block
@@ -66,8 +66,8 @@ namespace Firefly {
     //% block
     //% blockHidden=true
     export enum DCDirectionValues {
-        forward = 0,
-        backwards = 1
+        forward = 1,
+        backward = 2
     }
 
     //% blockId=set_dc
@@ -77,6 +77,6 @@ namespace Firefly {
     //% speed.min=0 speed.max=255 speed.defl=0
     export function setDC(dcAtPin: DCPinValues, direction: DCDirectionValues, speed: number): void {
         //adjustMotorType("dc")
-        write(i2cAddr, dcAtPin, direction+1, speed )
+        write(i2cAddr, dcAtPin, direction, speed )
     }
 }
