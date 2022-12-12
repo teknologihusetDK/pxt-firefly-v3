@@ -14,11 +14,17 @@ namespace Firefly {
         buffer.setNumber(NumberFormat.Int8LE, 1, command)
         buffer.setNumber(NumberFormat.Int8LE, 2, value)
         pins.i2cWriteBuffer(chipAddress, buffer, false)*/
-        pins.i2cWriteNumber(chipAddress, component, NumberFormat.Int8LE, false)
+        /*pins.i2cWriteNumber(chipAddress, component, NumberFormat.Int8LE, false)
         basic.pause(20)
         pins.i2cWriteNumber(chipAddress, command, NumberFormat.Int8LE, false)
         basic.pause(20)
         pins.i2cWriteNumber(chipAddress, value, NumberFormat.Int8LE, false)
+        basic.pause(20)*/
+        pins.i2cWriteNumber(8, 1, NumberFormat.Int8LE, false)
+        basic.pause(20)
+        pins.i2cWriteNumber(8, 1, NumberFormat.Int8LE, false)
+        basic.pause(20)
+        pins.i2cWriteNumber(8, 20, NumberFormat.Int8LE, false)
         basic.pause(20)
     }
 
