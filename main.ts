@@ -8,8 +8,6 @@
 namespace Firefly {
     let i2cAddr: 8 // 0x08
     
-   
-
     function write(chipAddress: number, component: number, command: number, value: number): void {
         /*let buffer = pins.createBuffer(3)
         buffer.setNumber(NumberFormat.Int8LE, 0, component)
@@ -17,11 +15,11 @@ namespace Firefly {
         buffer.setNumber(NumberFormat.Int8LE, 2, value)
         pins.i2cWriteBuffer(chipAddress, buffer, false)*/
         pins.i2cWriteNumber(chipAddress, component, NumberFormat.Int8LE, false)
-        pause(20)
+        basic.pause(20)
         pins.i2cWriteNumber(chipAddress, command, NumberFormat.Int8LE, false)
-        pause(20)
+        basic.pause(20)
         pins.i2cWriteNumber(chipAddress, value, NumberFormat.Int8LE, false)
-        pause(20)
+        basic.pause(20)
     }
 
     /**
