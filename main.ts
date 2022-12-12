@@ -6,7 +6,7 @@
 //% weight=111 color=#1565B2 icon="\uf085" block="Firefly"
 
 namespace Firefly {
-    let i2cAddr: 8 // 0x08
+    let i2cAddr: 0x08 // 0x08
     
     function write(chipAddress: number, component: number, command: number, value: number): void {
         /*let buffer = pins.createBuffer(3)
