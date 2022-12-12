@@ -74,7 +74,7 @@ namespace Firefly {
     /*//% block="Set %dcAtPin| to %direction| at %speed"*/
     //% block="Kør %dcAtPin| %direction | med hastighed %speed"
     //% group="DC Motor"
-    //% speed.min=0 speed.max=255 speed.defl=0
+    //% speed.min=0 speed.max=100 speed.defl=0
     export function setDC(dcAtPin: DCPinValues, direction: DCDirectionValues, speed: number): void {
         //adjustMotorType("dc")
         write(i2cAddr, dcAtPin, direction, speed )
