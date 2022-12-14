@@ -1,31 +1,19 @@
-/**
- * Blocks for driving servo and DC motors, using the Firefly connection Board
- */
-
-//% groups='["DC Motor","Servo Motor"]'
-//% weight=111 color=#1565B2 icon="\uf085" block="Firefly"
-
 namespace Firefly {
-    let i2cAddr: 8 // 0x08
+    let i2cAddr = 0x08
     
-    function write(chipAddress: number, component: number, command: number, value: number): void {
+    function write(component: number, command: number, value: number): void {
         /*let buffer = pins.createBuffer(3)
         buffer.setNumber(NumberFormat.Int8LE, 0, component)
         buffer.setNumber(NumberFormat.Int8LE, 1, command)
         buffer.setNumber(NumberFormat.Int8LE, 2, value)
         pins.i2cWriteBuffer(chipAddress, buffer, false)*/
-        /*pins.i2cWriteNumber(chipAddress, component, NumberFormat.Int8LE, false)
+        pins.i2cWriteNumber(i2cAddr, component, NumberFormat.Int8LE, false)
         basic.pause(20)
-        pins.i2cWriteNumber(chipAddress, command, NumberFormat.Int8LE, false)
+        pins.i2cWriteNumber(i2cAddr, command, NumberFormat.Int8LE, false)
         basic.pause(20)
-        pins.i2cWriteNumber(chipAddress, value, NumberFormat.Int8LE, false)
-        basic.pause(20)*/
-        pins.i2cWriteNumber(8, component, NumberFormat.Int8LE, false)
+        pins.i2cWriteNumber(i2cAddr, value, NumberFormat.Int8LE, false)
         basic.pause(20)
-        pins.i2cWriteNumber(8, command, NumberFormat.Int8LE, false)
-        basic.pause(20)
-        pins.i2cWriteNumber(8, value, NumberFormat.Int8LE, false)
-        basic.pause(20)
+
     }
 
     /**
@@ -55,7 +43,7 @@ namespace Firefly {
     //max=150 - see servo spec doc
     export function setServo(servoAtPin: ServoPinValues, angle: number): void {
         //adjustMotorType("servo")
-        write(i2cAddr, servoAtPin, 5, angle)
+        write(servoAtPin, 5, angle)
     }
 
     //% block
@@ -81,6 +69,7 @@ namespace Firefly {
     //% speed.min=0 speed.max=100 speed.defl=0
     export function setDC(dcAtPin: DCPinValues, direction: DCDirectionValues, speed: number): void {
         //adjustMotorType("dc")
-        write(i2cAddr, dcAtPin, direction, speed )
+        write(dcAtPin, direction, speed)
+
     }
 }
