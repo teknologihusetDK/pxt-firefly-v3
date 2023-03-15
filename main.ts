@@ -1,5 +1,5 @@
 namespace Firefly {
-    let i2cAddr = 0x08
+    let i2cAddr = 8 
     
     function write(component: number, command: number, value: number): void {
         /*let buffer = pins.createBuffer(3)
@@ -42,7 +42,7 @@ namespace Firefly {
     //% angle.min=0 angle.max=180 angle.defl=0
     //max=150 - see servo spec doc
     export function setServo(servoAtPin: ServoPinValues, angle: number): void {
-        //adjustMotorType("servo")
+        //write(97, 98, 0) //Enable Servo
         write(servoAtPin, 5, angle)
     }
 
@@ -68,7 +68,7 @@ namespace Firefly {
     //% group="DC Motor"
     //% speed.min=0 speed.max=100 speed.defl=0
     export function setDC(dcAtPin: DCPinValues, direction: DCDirectionValues, speed: number): void {
-        //adjustMotorType("dc")
+        //write(97, 97, 0) //Enable DC
         write(dcAtPin, direction, speed)
 
     }
