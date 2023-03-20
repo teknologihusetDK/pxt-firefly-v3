@@ -8,11 +8,11 @@ namespace Firefly {
         buffer.setNumber(NumberFormat.Int8LE, 2, value)
         pins.i2cWriteBuffer(chipAddress, buffer, false)*/
         pins.i2cWriteNumber(i2cAddr, component, NumberFormat.Int8LE, false)
-        basic.pause(10)
+        basic.pause(5)
         pins.i2cWriteNumber(i2cAddr, command, NumberFormat.Int8LE, false)
-        basic.pause(10)
+        basic.pause(5)
         pins.i2cWriteNumber(i2cAddr, value, NumberFormat.Int8LE, false)
-        basic.pause(10)
+        basic.pause(5)
 
     }
 
