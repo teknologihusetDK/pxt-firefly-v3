@@ -46,14 +46,6 @@ namespace Firefly {
         write(servoAtPin, 5, angle)
     }
 
-    //% blockId=servo_enable
-    /*//% block="Enable Servo"*/
-    //% block="Toggle Enable Servo"
-    //% group="Servo Motor"
-    export function servoEnable(): void {
-        write(97, 98, 0) //Toggle Enable Servo
-    }
-
     //% block
     //% blockHidden=true
     export enum DCPinValues {
