@@ -58,7 +58,9 @@ namespace Firefly {
     //% block
     //% blockHidden=true
     export enum DCDirectionValues {
+        //% block=fremad
         forwards = 1,
+        //% block=baglæns
         backwards = 2
     }
 
