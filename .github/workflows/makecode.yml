@@ -1,0 +1,17 @@
+name: MakeCode Build
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+      - name: Install MakeCode CLI
+        run: npm install -g makecode
+      - name: Build extension
+        run: mkc build --target https://makecode.microbit.org
