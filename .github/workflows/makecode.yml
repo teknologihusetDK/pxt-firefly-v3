@@ -13,5 +13,7 @@ jobs:
           node-version: 'lts/*'
       - name: Install MakeCode CLI
         run: npm install -g makecode
+      - name: Install dependencies
+        run: mkc install
       - name: Build extension
-        run: mkc build --target https://makecode.microbit.org
+        run: mkc build
