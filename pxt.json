@@ -1,11 +1,10 @@
 {
     "name": "pxt-firefly-v3",
-    "version": "0.0.0",
-    "description": "",
+    "version": "0.1.0",
+    "description": "Blocks for controlling servos and DC motors on the Firefly v3 platform",
+    "license": "MIT",
     "dependencies": {
-        "core": "*",
-        "radio": "*",
-        "microphone": "*"
+        "core": "*"
     },
     "files": [
         "README.md",
