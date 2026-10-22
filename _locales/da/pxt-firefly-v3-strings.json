@@ -1,0 +1,15 @@
+{
+    "Firefly.blink|block": "blink LED",
+    "set_servo|block": "Sæt %servoAtPin til position %angle",
+    "set_dc|block": "Kør %dcAtPin %direction med hastighed %speed",
+    "DCDirectionValues.forwards": "fremad",
+    "DCDirectionValues.backwards": "baglæns",
+    "ServoPinValues.servo1": "servo 1",
+    "ServoPinValues.servo2": "servo 2",
+    "ServoPinValues.servo3": "servo 3",
+    "ServoPinValues.servo4": "servo 4",
+    "DCPinValues.dcmotor1": "DC motor 1",
+    "DCPinValues.dcmotor2": "DC motor 2",
+    "DCPinValues.dcmotor3": "DC motor 3",
+    "DCPinValues.dcmotor4": "DC motor 4"
+}
