@@ -9,7 +9,8 @@
     "files": [
         "README.md",
         "main.blocks",
-        "main.ts"
+        "main.ts",
+        "_locales/da/pxt-firefly-v3-strings.json"
     ],
     "testFiles": [
         "test.ts"
