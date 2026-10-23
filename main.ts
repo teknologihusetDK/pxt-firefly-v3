@@ -75,4 +75,12 @@ namespace Firefly {
     export function setDC(dcAtPin: DCPinValues, direction: DCDirectionValues, speed: number): void {
         write(dcAtPin, direction, speed)
     }
+
+    //% blockId=stop_dc
+    //% block="Stop %dcAtPin"
+    //% group="DC Motor"
+    //% weight=70
+    export function stopDC(dcAtPin: DCPinValues): void {
+        write(dcAtPin, DCDirectionValues.forwards, 0)
+    }
 }
