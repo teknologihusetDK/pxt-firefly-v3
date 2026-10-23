@@ -76,6 +76,23 @@ namespace Firefly {
         write(dcAtPin, direction, speed)
     }
 
+    //% blockId=ramp_dc
+    //% block="Accelerate %dcAtPin %direction from %fromSpeed to %toSpeed over %duration ms"
+    //% group="DC Motor"
+    //% weight=75
+    //% fromSpeed.min=0 fromSpeed.max=100 fromSpeed.defl=0
+    //% toSpeed.min=0 toSpeed.max=100 toSpeed.defl=100
+    //% duration.min=100 duration.max=10000 duration.defl=1000
+    export function rampDC(dcAtPin: DCPinValues, direction: DCDirectionValues, fromSpeed: number, toSpeed: number, duration: number): void {
+        let steps = 10
+        let stepDelay = Math.idiv(duration, steps)
+        for (let i = 0; i <= steps; i++) {
+            let speed = Math.round(fromSpeed + (toSpeed - fromSpeed) * i / steps)
+            write(dcAtPin, direction, speed)
+            basic.pause(stepDelay)
+        }
+    }
+
     //% blockId=stop_dc
     //% block="Stop %dcAtPin"
     //% group="DC Motor"

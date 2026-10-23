@@ -13,5 +13,7 @@ Firefly.setDC(Firefly.DCPinValues.dcmotor2, Firefly.DCDirectionValues.backwards,
 Firefly.setDC(Firefly.DCPinValues.dcmotor3, Firefly.DCDirectionValues.forwards, 0)
 Firefly.setDC(Firefly.DCPinValues.dcmotor4, Firefly.DCDirectionValues.backwards, 75)
 
+Firefly.rampDC(Firefly.DCPinValues.dcmotor1, Firefly.DCDirectionValues.forwards, 0, 100, 2000)
+Firefly.rampDC(Firefly.DCPinValues.dcmotor1, Firefly.DCDirectionValues.forwards, 100, 0, 1000)
 Firefly.stopDC(Firefly.DCPinValues.dcmotor1)
 Firefly.stopDC(Firefly.DCPinValues.dcmotor4)

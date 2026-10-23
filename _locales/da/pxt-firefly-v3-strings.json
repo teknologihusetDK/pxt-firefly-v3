@@ -4,6 +4,7 @@
     "set_dc|block": "Kør %dcAtPin %direction med hastighed %speed",
     "DCDirectionValues.forwards": "fremad",
     "DCDirectionValues.backwards": "baglæns",
+    "ramp_dc|block": "Accelerer %dcAtPin %direction fra %fromSpeed til %toSpeed over %duration ms",
     "stop_dc|block": "Stop %dcAtPin",
     "ServoPinValues.servo1": "servo 1",
     "ServoPinValues.servo2": "servo 2",
