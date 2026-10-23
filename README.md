@@ -46,6 +46,10 @@ Tilgængelige porte: **DC motor 1 – DC motor 4**.
 
 ---
 
+## Vigtigt: aktivér servo og motor på Firefly-printet
+
+Firefly v3-printet har fysiske knapper til at slå strøm til servoer og DC-motorer. **Ingenting kører, før du trykker på den relevante knap på printet.** Sørg for at have aktiveret den ønskede gruppe (servo / motor), inden du sender kommandoer fra micro:bitten.
+
 ## Tilslutning
 
 | Port på Firefly v3 | Blok-navn | I²C-komponentnummer |

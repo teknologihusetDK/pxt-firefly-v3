@@ -45,7 +45,6 @@ namespace Firefly {
     //% group="Servo Motor"
     //% weight=90
     //% angle.min=0 angle.max=180 angle.defl=0
-    // TODO: Verificer maksimumsvinkel mod servo-datablad (original kommentar angav max=150).
     export function setServo(servoAtPin: ServoPinValues, angle: number): void {
         write(servoAtPin, 5, angle)
     }
